@@ -1,5 +1,11 @@
 pipeline {
-agent {  label 'unittest'}
+agent { 
+    agent { dockerfile 
+        {
+            label "unittests:${env.BRANCH_NAME}"
+        }
+    label 'unittest'
+    }
     options {
       parallelsAlwaysFailFast()
     }
@@ -10,9 +16,7 @@ agent {  label 'unittest'}
             
             steps {
                 checkout scm
-                script{
-                    image = docker.build("unittests:${env.BRANCH_NAME}")
-                }
+
             }
             
         }        
