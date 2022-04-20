@@ -3,6 +3,7 @@ pipeline {
         {
             filename "Dockerfile"
             label  'unittest'
+            additionalBuildArgs  " --name unittests:${env.BRANCH_NAME}"
         }
                
     }
@@ -24,10 +25,9 @@ pipeline {
             parallel {
                 stage('Run unittests') {
                     steps {
-                        script {
-                            image.inside {
+ 
                                 sh "python3 -m pytest"
-                            }
+
                         }
                     }
                 }
