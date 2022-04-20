@@ -30,7 +30,8 @@ pipeline {
 
                         }
                     }
-                }
+                
+                
                 stage('Run linter') {
                     steps {    
                         script {
@@ -50,7 +51,7 @@ pipeline {
             }
 
         
-        
+        }
         stage('Publish reports') { 
             steps {
                 cobertura  (
