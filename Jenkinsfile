@@ -27,7 +27,6 @@ pipeline {
                     steps {
  
                                 sh "python3 -m pytest"
-
                         }
                     }
                 
@@ -36,9 +35,7 @@ pipeline {
                     steps {    
                         script {
                             try{
- 
-                                sh "prospector -o pylint:report/pylint.log src/"
-                            
+                                sh "prospector -o pylint:report/pylint.log src/"                            
                         
                             } catch (error) {
                                 throw error
@@ -74,9 +71,7 @@ pipeline {
         stage('Build') { 
             steps {
                 script {
-
-                        sh 'python3 -m build'
-                    
+                        sh 'python3 -m build'                   
                 }
             }
         }
