@@ -1,5 +1,4 @@
 pipeline {
-agent { 
     agent { dockerfile 
         {
             label "unittests:${env.BRANCH_NAME}"
