@@ -3,7 +3,7 @@ pipeline {
         {
             filename "Dockerfile"
             label  'unittest'
-            additionalBuildArgs  " --name unittests:${env.BRANCH_NAME}"
+            additionalBuildArgs  "--name unittests:${env.BRANCH_NAME}"
         }
                
     }
