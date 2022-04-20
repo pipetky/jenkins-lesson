@@ -1,10 +1,10 @@
 pipeline {
     agent { dockerfile
         {
-
-            label "unittests:${env.BRANCH_NAME}"
+            filename "Dockerfile"
+            label  'unittest'
         }
-               label  'unittest'
+               
     }
     options {
       parallelsAlwaysFailFast()
