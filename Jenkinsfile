@@ -36,7 +36,7 @@ pipeline {
                     steps {    
                         script {
                             try{
-                            image.inside() {
+  
                                 sh "prospector -o pylint:report/pylint.log src/"
                             }
                         
@@ -74,7 +74,7 @@ pipeline {
         stage('Build') { 
             steps {
                 script {
-                    image.inside {
+     
                         sh 'python3 -m build'
                     }
                 }
