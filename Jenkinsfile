@@ -48,7 +48,9 @@ pipeline {
                     }
                 }
             }
+
         }
+        
         stage('Publish reports') { 
             steps {
                 cobertura  (
